@@ -1,0 +1,40 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Phone No</th>
+        <th>Email</th>
+        <th>Origin</th>
+        <th>Faculty</th>
+        <th>Subject Studied</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of students" >
+      <tr>
+        <td>{{student.studentID}}</td>
+        <td>{{student.studentName}}</td>
+        <td>{{student.dateofBirth | date: 'dd/MM/yyyy'}}</td>
+        <td>{{student.phonenumber}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.origin}}</td>
+        <td>{{student.facultyName}}</td>
+        <td *ngFor="let item of student.listNameSubject" style="display: block;">
+          <tr>{{item}}</tr>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="RemoveStudent(student.studentID)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+    <!-- <tr>
+      <button type="button" class="btn btn-success" (click)="ShowSave()">Add Student</button>
+    </tr> -->
+  </table>
+  <app-SaveStudent [hidden]=IsShowSave></app-SaveStudent>
+  </div>
+

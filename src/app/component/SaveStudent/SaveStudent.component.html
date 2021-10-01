@@ -1,0 +1,70 @@
+<div style="width: 50%; text-align: center; margin: 0 auto;">
+  <h3> Please Input Student Information</h3>
+  <form style="text-align: left;">
+    <div class="form-group">
+      <label for="">Student ID: </label>
+      <input type="text"
+        formControlName="ID"
+        class="form-control" name="studentid" id="studentid"
+        aria-describedby="helpId" placeholder="">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Student Name: </label>
+      <input type="text"
+        formControlName="Name"
+        class="form-control" name="studentname" id="studentname"
+        aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Student Email: </label>
+      <input type="text" [(ngModel)]="Email"
+        class="form-control" name="studentemail" id="studentemail"
+        aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Student Birthdate: </label>
+      <input type="datetime-local" [(ngModel)]="Birthdate"
+        class="form-control" name="studentbirth" id="studentbirth"
+        aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Phone Number: </label>
+      <input type="text" [(ngModel)]="PhoneNum"
+        class="form-control" name="phonenumber" id="phonenumber"
+        aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Student Faculty: </label>
+      <input type="text" [(ngModel)]="Faculty"
+        class="form-control" name="faculty" id="faculty"
+        aria-describedby="helpId" placeholder="">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Student Origin: </label>
+      <input type="text" [(ngModel)]="Origin"
+        class="form-control" name="origin" id="origin"
+        aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    <div class="form-group">
+      <label for="">Number of Subject: </label>
+      <input type="text"
+        [(ngModel)]="Quantity"
+        class="form-control" name="SubjectNo" id="SubjectNo"
+        aria-describedby="helpId" placeholder="">
+    </div>
+    <div class="form-group" *ngFor='let in of counter() ;let i = index'>
+      <label for="">Subject ID {{i+1}}: </label>
+      <input type="text"  [(ngModel)]="ListSubject[i]"
+        class="form-control" name="SubjectId" id="SubjectId"
+        aria-describedby="helpId" placeholder="">
+    </div>
+    <button type="button" class="btn btn-success" style="width: 100%;" (click)="SaveStudent()">Save Student</button>
+  </form>
+</div>

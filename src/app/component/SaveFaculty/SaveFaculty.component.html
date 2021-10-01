@@ -1,0 +1,18 @@
+<div style="width: 50%; text-align: center; margin: 0 auto;">
+  <h3> Please Input Student Information</h3>
+  <form action="" style="text-align: left;">
+    <div class="form-group">
+      <label for="">Faculty ID: </label>
+      <input type="text" [(ngModel)]="ID"
+        class="form-control" name="studentid" id="studentid"
+        aria-describedby="helpId" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="">Faculty Name: </label>
+      <input type="text"[(ngModel)]="Name"
+        class="form-control" name="studentname" id="studentname"
+        aria-describedby="helpId" placeholder="">
+    </div>
+    <button type="button" class="btn btn-success" style="width: 100%;" (click)="SaveFaculty()">Save Faculty</button>
+  </form>
+</div>

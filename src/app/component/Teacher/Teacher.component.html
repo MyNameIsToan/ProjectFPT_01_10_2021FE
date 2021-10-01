@@ -1,0 +1,31 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Teacher ID</th>
+        <th>Teacher Name</th>
+        <th>Teacher Email</th>
+        <th>Teacher Origin</th>
+        <th>Faculty</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Teacher of Teachers" >
+      <tr>
+        <td>{{Teacher.teacherID}}</td>
+        <td>{{Teacher.teacherName}}</td>
+        <td>{{Teacher.email}}</td>
+        <td>{{Teacher.origin}}</td>
+        <td>{{Teacher.facultyName}}</td>
+        <td>
+          <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="RemoveTeacher(Teacher.teacherID)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+    <tr>
+      <button type="button" class="btn btn-success">Add Student</button>
+    </tr>
+  </table>
+  </div>
+

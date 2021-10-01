@@ -1,0 +1,68 @@
+<div style="width: 50%; text-align: center; margin: 0 auto;">
+<h3> Please Input Student Information</h3>
+<form (ngSubmit)="OnSubmit()" [formGroup]="StudentForm" style="text-align: left;">
+ <div class="form-group">
+   <label for="">Student ID:</label>
+   <input type="text"
+     formControlName="ID"
+     class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+   <small id="helpId" *ngIf="!StudentForm.get('ID')?.valid && StudentForm.get('ID')?.touched" class="form-text text-muted">Student ID is required and it has 8 digits</small>
+ </div>
+ <div class="form-group">
+  <label for="">Student Name:</label>
+  <input type="text"
+    formControlName="Name"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Name')?.valid && StudentForm.get('Name')?.touched"class="form-text text-muted">Student Name is required</small>
+</div>
+<div class="form-group">
+  <label for="">Birthdate:</label>
+  <input type="date"
+    formControlName="Birthdate"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Birthdate')?.valid"class="form-text text-muted" class="form-text text-muted">Birthdate is required</small>
+</div>
+<div class="form-group">
+  <label for="">Student Email:</label>
+  <input type="email"
+    formControlName="Email"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Email')?.valid && StudentForm.get('Email')?.touched" class="form-text text-muted" class="form-text text-muted">Email is required</small>
+</div>
+<div class="form-group">
+  <label for="">Student Phone:</label>
+  <input type="text"
+    formControlName="Phone"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Phone')?.valid && StudentForm.get('Phone')?.touched" class="form-text text-muted">Phone number is required, Number input only</small>
+</div>
+<div class="form-group">
+  <label for="">Student Origin:</label>
+  <input type="text"
+    formControlName="Origin"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Origin')?.valid && StudentForm.get('Origin')?.touched" class="form-text text-muted">Origin is required</small>
+</div>
+<div class="form-group">
+  <label for="">Faculty:</label>
+  <input type="text"
+    formControlName="Faculty"
+    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <small id="helpId" *ngIf="!StudentForm.get('Faculty')?.valid && StudentForm.get('Faculty')?.touched" class="form-text text-muted">Help text</small>
+</div>
+<div class="form-group">
+  <label for="">Number of Subject: </label>
+  <input type="text"
+    [(ngModel)]="Quantity" [ngModelOptions]="{standalone:true}"
+    class="form-control" name="SubjectNo" id="SubjectNo"
+    aria-describedby="helpId" placeholder="">
+</div>
+<div class="form-group" *ngFor='let in of counter() ;let i = index'>
+  <label for="">Subject ID {{i+1}}: </label>
+  <input type="text"  [(ngModel)]="ListSubject[i]" [ngModelOptions]="{standalone:true}"
+    class="form-control" name="SubjectId" id="SubjectId"
+    aria-describedby="helpId" placeholder="">
+</div>
+<button [hidden]=!StudentForm.valid class="btn btn-success" style="width: 100%;">Save</button>
+</form>
+</div>

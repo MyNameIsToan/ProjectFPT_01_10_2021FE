@@ -1,0 +1,26 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Faculty ID</th>
+        <th>Faculty Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Faculty of Faculties" >
+      <tr *ngIf="Faculty.facultyId !== '0'">
+        <td>{{Faculty.facultyId}}</td>
+        <td>{{Faculty.facultyName}}</td>
+        <td>
+          <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="RemoveFaculty(Faculty.facultyId)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+    <tr>
+      <button type="button" class="btn btn-success" (click)="ShowSave()">Add Faculty</button>
+    </tr>
+  </table>
+  <app-SaveFaculty [hidden]=IsShowSave></app-SaveFaculty>
+  </div>
+
